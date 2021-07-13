@@ -1,0 +1,12 @@
+{   "camelcase" : true, 
+    "quotmark" : true, 
+    "maxlen" : 120, 
+    "trailing" : true, 
+    "curly" : true, 
+    "strict" : true, 
+    "browser" : true, 
+    "devel" : true, 
+    "jquery" : true,
+    "esversion" : 9, 
+    "node" : true 
+}
