@@ -1,8 +1,8 @@
 import React from 'react';
-import './Profile.css';
+import p from './Profile.module.css';
 
 const Profile = () => {
-    return <div className="content">      
+  return <div className={p.content}>
     <div>
       <img className="img" src="https://www.potidea-palace.com/wp-content/uploads/elementor/thumbs/A-beach-to-behold-Halkidiki%E2%80%99s-most-unique-beaches-ol5gkj7ff58eyfz0tipioyfe2zgpuroidmogct6g6o.jpg" alt="beach" />
     </div>
@@ -13,17 +13,14 @@ const Profile = () => {
       <div>
         My posts
         <div>
-          <div>
+          New post
+        </div>
+        <div className={p.posts}>
+          <div className={p.item}>
             Post 1
           </div>
-          <div>
+          <div className={p.item}>
             Post 2
-          </div>
-          <div>
-            Post 3
-          </div>
-          <div>
-            Post 4
           </div>
         </div>
       </div>
