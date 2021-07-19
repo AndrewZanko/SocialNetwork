@@ -3,11 +3,7 @@
     grid-area: c;
 }
 
-.content img {
+.content .img {
     width: 1050px;
     height: 200px;
-}
-
-.item {
-    color: brown;
 }
