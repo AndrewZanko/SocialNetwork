@@ -7,7 +7,7 @@ const Post = (props) => {
             <img src='https://samp-rp.su/data/avatars/l/901/901430.jpg?1542946651' alt='avatar' />
             {props.message}
             <div>
-                <span>{props.likes}</span>
+                <span>{props.likes} likes</span>
             </div>
         </div>)
 }
