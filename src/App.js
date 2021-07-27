@@ -9,18 +9,20 @@ import Profile from './components/Profile/Profile';
 import Settings from './components/Settings_/Settings';
 import Sidebar from './components/Sidebar/Sidebar';
 
-const App = () => {
+const App = (props) => {
+  //debugger;
   return (
+  
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
         <Sidebar />     
         <div className="app-wrapper-content">
-          <Route path='/dialogs' component={Dialogs} />
-          <Route path='/profile' component={Profile} />
-          <Route path='/news' component={News} />
-          <Route path='/music' component={Music} />
-          <Route path='/settings' component={Settings} />
+          <Route path='/dialogs' render={ () => <Dialogs dialogs = {props.dialogs} messages={props.messages}/>} />
+          <Route path='/profile' render={ () => <Profile posts = {props.posts}/>} />
+          <Route path='/news' render={ () => <News />} />
+          <Route path='/music' render={ () => <Music />} />
+          <Route path='/settings' render={ () => <Settings />} />
         </div>     
       </div>
     </BrowserRouter>
