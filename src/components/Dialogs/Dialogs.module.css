@@ -2,21 +2,3 @@
     display: grid;
     grid-template-columns: 3fr 7fr;
 }
-
-.dialogsItems {
-    padding: 10px;
-    color: white;    
-    text-decoration: none;
-}
-
-.dialogsItems .active {
-    color: firebrick;
-}
-
-.messages {
-    padding: 10px;
-}
-
-.message {
-
-}
