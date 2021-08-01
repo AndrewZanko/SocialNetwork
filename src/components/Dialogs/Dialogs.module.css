@@ -2,3 +2,12 @@
     display: grid;
     grid-template-columns: 3fr 7fr;
 }
+
+.dialogsItems .textarea {
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.dialogsItems .sendbutton {
+    padding-left: 20px;
+}
