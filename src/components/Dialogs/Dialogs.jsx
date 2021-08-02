@@ -19,15 +19,15 @@ const Dialogs = (props) => {
         <div className={d.dialogs}>
             <div className={d.dialogsItems}>
                 {dialogsElements}
+            </div>
+            <div className={d.messages}>
+                {messagesElements}
                 <div className={d.textarea}>
                     <textarea ref={newMessageElement}></textarea>
                 </div>
                 <div className={d.sendbutton}>
                     <button onClick={sendMessage}>Send message</button>
                 </div>
-            </div>
-            <div className={d.messages}>
-                {messagesElements}
             </div>
         </div>
     );
