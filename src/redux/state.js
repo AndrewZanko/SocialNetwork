@@ -6,6 +6,7 @@ let state = {
             {id: 1, message: "what's up, dudes", likesCount: 15},
             {id: 2, message: "going well XD", likesCount: 20},
         ],
+        postText : "Mock-text",
     },
     dialogsPage : {
         dialogs : [
@@ -39,10 +40,18 @@ let state = {
     }    
 };
 
-export let addPost = (postMessage) => {
-    let newPost = {id: 5, message: postMessage, likesCount: 0}; 
+export let addPost = () => {
+    let newPost = {id: 5, message: state.profilePage.postText, likesCount: 0}; 
     state.profilePage.posts.push(newPost);
+    state.profilePage.postText = '';
     globalRerender(state);
+}
+
+export let updatePostText = (newText) => {
+    debugger;
+    state.profilePage.postText = newText;
+    globalRerender(state);
+    //return newText;
 }
 
 export default state;
