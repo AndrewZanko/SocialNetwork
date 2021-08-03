@@ -1,4 +1,5 @@
-import { globalRerender } from "../render";
+let globalRerender = () => {
+}
 
 let state = {
     profilePage : {
@@ -41,28 +42,32 @@ let state = {
     }    
 };
 
-export let addPost = () => {
+export const addPost = () => {
     let newPost = {id: 5, message: state.profilePage.postText, likesCount: 0}; 
     state.profilePage.posts.push(newPost);
     state.profilePage.postText = '';
     globalRerender(state);
 }
 
-export let updatePostText = (newText) => {
+export const updatePostText = (newText) => {
     state.profilePage.postText = newText;
     globalRerender(state);
 }
 
-export let addMessage = () => {
+export const addMessage = () => {
     let newMessage = {id: 4, message: state.dialogsPage.messageText};
     state.dialogsPage.messages.push(newMessage);
     state.dialogsPage.messageText = '';
     globalRerender(state);
 }
 
-export let updateMessageText = (newText) => {
+export const updateMessageText = (newText) => {
     state.dialogsPage.messageText = newText;
     globalRerender(state);
 }
+
+export let subscribe = (observer) => {
+    globalRerender = observer;
+} 
 
 export default state;
