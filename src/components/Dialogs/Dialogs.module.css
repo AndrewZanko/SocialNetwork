@@ -3,11 +3,16 @@
     grid-template-columns: 3fr 7fr;
 }
 
-.dialogsItems .textarea {
+.messageItems {
+    padding-left: 20px;
+    margin-top: 15px;
+}
+
+.messages .textarea {
     padding-left: 20px;
     margin-top: 20px;
 }
 
-.dialogsItems .sendbutton {
+.messages .sendbutton {
     padding-left: 20px;
 }

@@ -21,6 +21,7 @@ let state = {
             {id: 2, message: "Going well!"},
             {id: 3, message: "Any plans for tonight?"},
         ],
+        messageText : "Mock-text",
         // messages : [
         //     {id: 1, name: "Misha", messages:[{id: 1, author: "Andrew", message: "Hi!"},
         //                                      {id: 2, author: "Misha", message: "Hey, how's it going?"},
@@ -48,10 +49,20 @@ export let addPost = () => {
 }
 
 export let updatePostText = (newText) => {
-    debugger;
     state.profilePage.postText = newText;
     globalRerender(state);
-    //return newText;
+}
+
+export let addMessage = () => {
+    let newMessage = {id: 4, message: state.dialogsPage.messageText};
+    state.dialogsPage.messages.push(newMessage);
+    state.dialogsPage.messageText = '';
+    globalRerender(state);
+}
+
+export let updateMessageText = (newText) => {
+    state.dialogsPage.messageText = newText;
+    globalRerender(state);
 }
 
 export default state;
