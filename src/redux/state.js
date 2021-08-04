@@ -28,37 +28,60 @@ let store = {
         
     },
 
+
     getState() {
         return this._state;
     },
 
-    addPost() {
-        let newPost = {id: 5, message: this._state.profilePage.postText, likesCount: 0}; 
-        this._state.profilePage.posts.push(newPost);
-        this._state.profilePage.postText = '';
-        this._callSubscriber(this._state);
-    },
-
-    updatePostText(newText) {
-        this._state.profilePage.postText = newText;
-        this._callSubscriber(this._state);
-    },
-
-    addMessage() {
-        let newMessage = {id: 4, message: this._state.dialogsPage.messageText};
-        this._state.dialogsPage.messages.push(newMessage);
-        this._state.dialogsPage.messageText = '';
-        this._callSubscriber(this._state);
-    },
-
-    updateMessageText(newText) {
-        this._state.dialogsPage.messageText = newText;
-        this._callSubscriber(this._state); 
-    },
-
     subscribe(observer) {
         this._callSubscriber = observer; 
-    }
+    },
+
+
+    dispatch(action) {
+        if (action.type === "ADD_POST") {
+            let newPost = {id: 5, message: this._state.profilePage.postText, likesCount: 0}; 
+            this._state.profilePage.posts.push(newPost);
+            this._state.profilePage.postText = '';
+            this._callSubscriber(this._state);
+        } else if (action.type === "UPDATE_POST_TEXT") {
+            this._state.profilePage.postText = action.newText;
+            this._callSubscriber(this._state);
+        } else if (action.type === "ADD_MESSAGE") {
+            let newMessage = {id: 4, message: this._state.dialogsPage.messageText};
+            this._state.dialogsPage.messages.push(newMessage);
+            this._state.dialogsPage.messageText = '';
+            this._callSubscriber(this._state);
+        } else if (action.type === "UPDATE_MESSAGE_TEXT") {
+            this._state.dialogsPage.messageText = action.newText;
+            this._callSubscriber(this._state);
+        }
+    },
+
+    // addPost() {
+    //     let newPost = {id: 5, message: this._state.profilePage.postText, likesCount: 0}; 
+    //     this._state.profilePage.posts.push(newPost);
+    //     this._state.profilePage.postText = '';
+    //     this._callSubscriber(this._state);
+    // },
+
+    // updatePostText(newText) {
+    //     this._state.profilePage.postText = newText;
+    //     this._callSubscriber(this._state);
+    // },
+
+    // addMessage() {
+    //     let newMessage = {id: 4, message: this._state.dialogsPage.messageText};
+    //     this._state.dialogsPage.messages.push(newMessage);
+    //     this._state.dialogsPage.messageText = '';
+    //     this._callSubscriber(this._state);
+    // },
+
+    // updateMessageText(newText) {
+    //     this._state.dialogsPage.messageText = newText;
+    //     this._callSubscriber(this._state); 
+    // },
+
 }
 
 export default store;
