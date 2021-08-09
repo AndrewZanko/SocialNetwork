@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import store from './redux/state';
+import store from './redux/reduxStore';
 import { BrowserRouter } from 'react-router-dom';
 
 export let globalRerender = (state) => {
@@ -19,7 +19,10 @@ export let globalRerender = (state) => {
 
 globalRerender(store.getState());
 
-store.subscribe(globalRerender);
+store.subscribe(() => {
+  let state = store.getState();
+  globalRerender(state);
+});
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
