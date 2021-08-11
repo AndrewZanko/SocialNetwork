@@ -7,25 +7,17 @@ import store from './redux/reduxStore';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
-export let globalRerender = () => {
-    ReactDOM.render(
-      <React.StrictMode>
-        <BrowserRouter>
-          <Provider store={store} >
-            <App />
-          </Provider>        
-        </BrowserRouter>
-      </React.StrictMode>,
-      document.getElementById('root')
-    );
-  };
 
-globalRerender(store.getState());
-
-store.subscribe(() => {
-  let state = store.getState();
-  globalRerender(state);
-});
+ReactDOM.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <Provider store={store} >
+         <App />
+      </Provider>        
+    </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
