@@ -21,15 +21,17 @@ const dialogsReducer = (state = inintialState, action) => {
     switch (action.type) {
         case ADD_MESSAGE: {
             let newMessage = {id: 4, message: state.messageText};
-            let stateCopy = {...state};  //no need to copy messages because only dialogsPage is immutable
-            stateCopy.messages.push(newMessage);
-            stateCopy.messageText = '';
-            return stateCopy;
+            return {
+                ...state,
+                messageText: '',
+                messages: [...state.messages, newMessage]
+            }
         }
         case UPDATE_MESSAGE_TEXT:{
-            let stateCopy = {...state};
-            stateCopy.messageText = action.newText;
-            return stateCopy;
+            return {
+                ...state,
+                messageText: action.newText
+            }
         }
         default: 
         return state;
