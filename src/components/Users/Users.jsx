@@ -9,12 +9,12 @@ const Users = (props) => {
     for(let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     };
-
+    
     return (
         <div>
             <div>
-                {pages.map(p => {
-                    return (<span className={props.currentPage === p && styles.selectedPage}
+                {pages.map((p, index) => {
+                    return (<span key = {index} className={props.currentPage === p ? styles.selectedPage : null}
                         onClick={(e)=>{props.onPageChainged(p)}}>{p}</span>);
                     })}
             </div>
