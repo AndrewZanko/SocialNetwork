@@ -6,3 +6,8 @@
 .avaDesrBlock {
     padding: 10px;
 }
+
+.avaDesrBlock img {
+    width: 150px;
+    height: 150px;
+}
