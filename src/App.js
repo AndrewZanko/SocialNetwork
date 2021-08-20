@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import './App.css';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
-import Header from './components/Header/Header';
+import HeaderContainer from './components/Header/HeaderContainer';
 import Music from './components/Music/Music';
 import News from './components/News/News';
 import ProfileContainer from './components/Profile/ProfileContainer';
@@ -13,7 +13,7 @@ import UsersContainer from './components/Users/UsersContainer';
 const App = (props) => {
   return (
     <div className="app-wrapper">
-      <Header />
+      <HeaderContainer />
       <Sidebar />     
       <div className="app-wrapper-content">
         <Route path='/dialogs' render={ () => <DialogsContainer />} />

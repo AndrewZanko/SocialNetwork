@@ -15,8 +15,13 @@
     /*grid-area: lo;*/
 }
 
-/*.header_text{
-    text-transform: capitalize;
-    color: cornsilk;
-    grid-area: te;
-}*/
+.loginBlock {
+    float: right;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.loginBlock a {
+    color: white;
+    font-size: larger;   
+}
