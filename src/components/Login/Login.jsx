@@ -1,6 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import React from 'react';
-import lo from './Login.module.css';
+import form from '../common/Forms/Forms.module.css';
 import * as Yup from 'yup';
 
 const initialValues = {
@@ -20,18 +20,22 @@ const validationSchema = Yup.object({
 const LoginForm = (props) => {
 
     return (
-        <div className={lo.loginForm}>
+        <div className={form.loginForm}>
             <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
                 <Form>
-                    <div className={lo.formControl}>
+                    <div className={form.formControl}>
                         <label htmlFor='login'>Login</label>
                         <Field type='text' id='login' name='login' />
-                        <ErrorMessage name='login' />
+                        <ErrorMessage name='login'>
+                            {errorMsg => <div className={form.error}>{errorMsg}</div>}
+                        </ErrorMessage>
                     </div>
-                    <div className={lo.formControl}>
+                    <div className={form.formControl}>
                         <label htmlFor='password'>Password</label>
                         <Field type='password' id='password' name='password' />
-                        <ErrorMessage name='password' />
+                        <ErrorMessage name='password'>
+                            {errorMsg => <div className={form.error}>{errorMsg}</div>}
+                        </ErrorMessage>
                     </div>
                     {/* <div>
                         <input type="checkbox" /> Remember me
