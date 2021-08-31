@@ -15,9 +15,10 @@ const validationSchema = Yup.object({
 });
 
 const MyPostsForm = (props) => {
-    const onSubmit = (values) => {
+    const onSubmit = (values, {resetForm}) => {
         console.log('Post text: ' + values.post);
         props.addPost(values.post);
+        resetForm({values: ''});
     };
 
     return (

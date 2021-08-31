@@ -16,9 +16,10 @@ const validationSchema = Yup.object({
 
 const DialogsForm = (props) => {
 
-    const onSubmit = (values) => {
+    const onSubmit = (values, {resetForm}) => {
         console.log('Message text: ' + values.message);
         props.addMessage(values.message);
+        resetForm({values: ''});
     };    
 
     return (
