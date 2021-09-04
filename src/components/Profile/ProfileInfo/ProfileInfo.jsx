@@ -2,7 +2,8 @@ import React from 'react';
 import Preloader from '../../common/Preloader/Preloader';
 import pi from './ProfileInfo.module.css';
 import userPhoto from '../../../assets/images/user.png';
-import ProfileStatus from './ProfileStatus';
+//import ProfileStatus from './ProfileStatus';
+import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
@@ -17,7 +18,8 @@ const ProfileInfo = (props) => {
                 <h2>{props.profile.fullName}</h2>
                 <img src={props.profile.photos.large ? props.profile.photos.large : userPhoto} alt='profile logo'></img>
                 <p>About me: {props.profile.aboutMe}</p>
-                <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
+                {/* <ProfileStatus status={props.status} updateStatus={props.updateStatus}/> */}
+                <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
             </div>
         </div>
     );
