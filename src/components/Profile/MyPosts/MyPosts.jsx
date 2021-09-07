@@ -40,10 +40,10 @@ const MyPostsForm = (props) => {
     );
 };
 
-const MyPosts = (props) => {
+const MyPosts = React.memo((props) => {
 
     let postsElements = props.posts.map( (po, index) => {return <Post message={po.message} likes={po.likesCount} key={index}/>});
-
+    console.log('HI!');
     return ( 
         <div className={p.myPostsBlock}>
             <h3>My posts</h3>
@@ -53,6 +53,6 @@ const MyPosts = (props) => {
             </div>
         </div>
     );
-};
+});
 
 export default MyPosts;
