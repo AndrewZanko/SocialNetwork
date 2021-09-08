@@ -16,11 +16,10 @@ const validationSchema = Yup.object({
     password: Yup.string().required('Please enter the password')
 });
 
-const LoginForm = (props) => {
+const LoginForm = ({loginOnSubmit}) => {
 
     const onSubmit = (values, {resetForm}) => {
-        //console.log('Form data: '+ values.login); //call API here (watch ep. 5)
-        props.loginOnSubmit(values.email, values.password, true);
+        loginOnSubmit(values.email, values.password, true);
         resetForm({values: ''});
     };
 
