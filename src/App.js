@@ -3,6 +3,8 @@ import React from 'react';
 import { Route, withRouter } from 'react-router-dom';
 import { compose } from 'redux';
 import './App.css';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Login from './components/Login/Login';
@@ -14,6 +16,8 @@ import Sidebar from './components/Sidebar/Sidebar';
 import UsersContainer from './components/Users/UsersContainer';
 import { initializeAPP } from './redux/appReducer';
 import Preloader from './components/common/Preloader/Preloader';
+import store from './redux/reduxStore';
+
 
 class App extends React.Component {
   componentDidMount() { 
@@ -22,7 +26,6 @@ class App extends React.Component {
 
   render() {
     if (!this.props.initialized) {
-      //debugger
       return <Preloader />
     }
     return (
@@ -47,4 +50,16 @@ const mapStateToProps = (state) => ({
   initialized: state.app.initialized
 });
 
-export default compose(withRouter, connect(mapStateToProps, {initializeAPP}))(App);
+const AppContainer = compose(withRouter, connect(mapStateToProps, {initializeAPP}))(App);
+
+const Main = (props) => {
+  return (
+    <BrowserRouter>
+      <Provider store={store} >
+         <AppContainer />
+      </Provider>        
+    </BrowserRouter>
+  ); 
+}
+
+export default Main;

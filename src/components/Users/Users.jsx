@@ -13,7 +13,7 @@ const Users = ({currentPage, totalUsersCount, pageSize, onPageChainged, ...props
     
     return (
         <div>
-            <Paginator currentPage={currentPage} totalUsersCount={totalUsersCount} pageSize={pageSize} onPageChainged={onPageChainged} />
+            <Paginator currentPage={currentPage} totalItemsCount={totalUsersCount} pageSize={pageSize} onPageChainged={onPageChainged} portionSize={10} />
             <div>
                 {
                     props.users.map((u, index) => <User key={index} user={u}
