@@ -1,21 +1,17 @@
-import { connect } from 'react-redux';
 import React, { Suspense } from 'react';
-import { Route, withRouter } from 'react-router-dom';
+import { connect, Provider } from 'react-redux';
+import { BrowserRouter, Route, withRouter } from 'react-router-dom';
 import { compose } from 'redux';
 import './App.css';
-import { BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
-//import DialogsContainer from './components/Dialogs/DialogsContainer';
+import Preloader from './components/common/Preloader/Preloader';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Login from './components/Login/Login';
 import Music from './components/Music/Music';
 import News from './components/News/News';
-//import ProfileContainer from './components/Profile/ProfileContainer';
 import Settings from './components/Settings_/Settings';
 import Sidebar from './components/Sidebar/Sidebar';
 import UsersContainer from './components/Users/UsersContainer';
 import { initializeAPP } from './redux/appReducer';
-import Preloader from './components/common/Preloader/Preloader';
 import store from './redux/reduxStore';
 
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
