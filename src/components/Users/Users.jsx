@@ -1,25 +1,28 @@
 import React from 'react';
 import Paginator from '../common/Paginator/Paginator';
 import User from './User';
-
+import styles from './Users.module.css';
 
 const Users = ({currentPage, totalUsersCount, pageSize, onPageChainged, ...props}) => {
-
-    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
-    let pages = [];
-    for(let i = 1; i <= pagesCount; i++) {
-        pages.push(i);
-    };
     
     return (
         <div>
             <Paginator currentPage={currentPage} totalItemsCount={totalUsersCount} pageSize={pageSize} onPageChainged={onPageChainged} portionSize={10} />
-            <div>
+            <div className={styles.wrapper}>
+                <div className={styles.left}>
                 {
-                    props.users.map((u, index) => <User key={index} user={u}
+                    props.users.filter((u, index) => index < props.users.length / 2).map((u, index) => <User key={index} user={u}
                         followingInProgress={props.followingInProgress}
                         follow={props.follow} unfollow={props.unfollow} />)
                 }
+                </div>
+                <div className={styles.right}>
+                {
+                    props.users.filter((u, index) => index >= props.users.length / 2).map((u, index) => <User key={index} user={u}
+                        followingInProgress={props.followingInProgress}
+                        follow={props.follow} unfollow={props.unfollow} />)
+                }
+                </div>               
             </div>           
         </div>
     )

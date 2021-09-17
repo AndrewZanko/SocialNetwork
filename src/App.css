@@ -4,9 +4,9 @@
     margin: 0 auto;
 
     display: grid;
-    grid-template-columns: 150px 1050px;
+    grid-template-columns: 200px 1000px;
     grid-template-rows: 150px auto;
-    grid-row-gap: 20px;
+    grid-row-gap: 12px;
 
     grid-template-areas:
         "h h"
@@ -14,6 +14,6 @@
 }
 
 .app-wrapper-content {
-    background-color: darkorange;
+    background-color: rgb(38, 163, 194);
     grid-area: c;
 }

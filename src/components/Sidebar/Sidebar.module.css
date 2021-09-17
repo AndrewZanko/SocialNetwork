@@ -1,5 +1,5 @@
 .nav {
-    background-color: chartreuse;
+    background-color: rgb(109, 238, 189);
     grid-area: s;
     padding: 20px;
 }
@@ -7,6 +7,16 @@
 .item a {
     color: white;    
     text-decoration: none;
+    font-size: x-large;
+    transition: color 0.1s linear;
+}
+
+.item a::after {
+    transition: opacity 0.2s linear;
+}
+
+.item a:hover {
+    color:rgb(245, 234, 80)
 }
 
 .item a.activeLink {

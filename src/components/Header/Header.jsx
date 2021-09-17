@@ -7,7 +7,7 @@ const Header = (props) => {
         <img src="https://www.designevo.com/images/home/2-5-0/blue-shield-and-banner-emblem.webp" className={h.img} alt="logo" />
         <div className={h.loginBlock}>
             {props.isAuth ? 
-                <div>{props.login} - <button onClick={props.logout}>Log out</button> </div> :
+                <div> <span className={h.profileName}>{props.login} - </span><button className={h.logoutButton} onClick={props.logout}>Log out</button> </div> :
                 <NavLink to='/login'>Login</NavLink>
             }            
         </div>

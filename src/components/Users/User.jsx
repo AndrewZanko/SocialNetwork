@@ -23,15 +23,9 @@ const User = ({user, followingInProgress, unfollow, follow}) => {
                     }
                 </div>
             </div>
-            <div>
-                <div>
-                    <div>{user.name}</div>
-                    <div>{user.status}</div>
-                </div>
-                <div>
-                    <div>{"user.location.city"}</div>
-                    <div>{"user.location.country"}</div>
-                </div>
+            <div className={styles.userInfo}>
+                <div>{user.name}</div>
+                <div>{user.status || 'No status set'}</div>
             </div>
         </div>        
     )

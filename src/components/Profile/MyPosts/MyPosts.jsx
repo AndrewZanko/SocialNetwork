@@ -26,13 +26,13 @@ const MyPostsForm = (props) => {
             <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
                 <Form>
                 <div className={form.formControl}>
-                        <Field type='text' id='post' name='post' as='textarea' placeholder='New post' />
+                        <Field className={p.textarea} type='text' id='post' name='post' as='textarea' placeholder='New post' />
                         <ErrorMessage name='post'>
                             {errorMsg => <div className={form.error}>{errorMsg}</div>}
                         </ErrorMessage>
                     </div>
                     <div>
-                        <button type='submit'>Send post</button>
+                        <button className={p.sendPost} type='submit'>Send post</button>
                     </div>
                 </Form>
             </Formik>
@@ -43,7 +43,7 @@ const MyPostsForm = (props) => {
 const MyPosts = React.memo((props) => {
 
     let postsElements = props.posts.map( (po, index) => {return <Post message={po.message} likes={po.likesCount} key={index}/>});
-    console.log('HI!');
+
     return ( 
         <div className={p.myPostsBlock}>
             <h3>My posts</h3>

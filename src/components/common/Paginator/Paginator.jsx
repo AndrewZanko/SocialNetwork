@@ -20,19 +20,23 @@ const Paginator = ({totalItemsCount, pageSize, currentPage, onPageChainged, port
     useEffect(()=>setPortionNumber(Math.ceil(currentPage/portionSize)), [currentPage, portionSize]);
 
     return (
-        <div className={styles.paginator}>
-            {portionNumber > 1 &&
-                <button onClick={() => {setPortionNumber(portionNumber - 1)}}>PREV</button>
-            }
-            {pages.filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber).map((p, index) => {
-                return (<span className={cn ({[styles.selectedPage]: currentPage === p}, styles.pageNumber) } key = {index}
-                    onClick={(e)=>{onPageChainged(p)}}>{p}</span>);
-                })
-            }
-            {portionNumber < portionCount &&
-                <button onClick={() => {setPortionNumber(portionNumber + 1)}}>NEXT</button>
-            }
-        </div>
+        <div className={styles.wrapper}>
+            <div className={styles.paginator}>
+                {portionNumber > 1 &&
+                    // <button onClick={() => {setPortionNumber(portionNumber - 1)}}>PREV</button>
+                    <span className={styles.leftArrow} onClick={() => {setPortionNumber(portionNumber - 1)}} />
+                }
+                {pages.filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber).map((p, index) => {
+                    return (<span className={cn ({[styles.selectedPage]: currentPage === p}, styles.pageNumber) } key = {index}
+                        onClick={(e)=>{onPageChainged(p)}}>{p}</span>);
+                    })
+                }
+                {portionNumber < portionCount &&
+                    // <button onClick={() => {setPortionNumber(portionNumber + 1)}}>NEXT</button>
+                    <span className={styles.rightArrow} onClick={() => {setPortionNumber(portionNumber + 1)}}/>
+                }
+            </div>
+        </div>        
     )
 }
 

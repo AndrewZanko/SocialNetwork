@@ -3,3 +3,20 @@
     height: 100px;
     border-radius: 50%;
 }
+
+.userInfo {
+    margin-bottom: 15px;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns:  1fr 1fr;
+    grid-column-gap: 3px;
+    background-color: white;
+}
+
+.left,
+.right {
+    padding-left: 200px;
+    background-color: rgb(38, 163, 194);
+}
