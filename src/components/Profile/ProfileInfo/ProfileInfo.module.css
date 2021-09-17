@@ -1,20 +1,17 @@
-.img {
-    width: 1050px;
-    height: 200px;
-}
-
 .avaDesrBlock {
     padding: 20px;
 }
 
-.avaDesrBlock img {
+.avaDesrBlock img {    
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
     width: 150px;
     height: 150px;
 }
 
 h2 {
     color: rgb(255, 235, 235);
-
 }
 
 input[type="file"] {

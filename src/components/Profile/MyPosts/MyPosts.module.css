@@ -29,6 +29,10 @@
     outline-width: 0;
 }
 
+h3 {
+    padding-left: 20px;
+}
+
 .sendPost {
     align-items: center;
     margin-left: 120px;

@@ -1,5 +1,8 @@
 # Getting Started with Create React App
 
+NOTE! The project is still being developped. The vast majority of server API features have been implemented
+but there are several client-only upgrades to be added. Stay tuned for more updates!
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

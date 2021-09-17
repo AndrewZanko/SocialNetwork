@@ -13,7 +13,6 @@ import Sidebar from './components/Sidebar/Sidebar';
 import UsersContainer from './components/Users/UsersContainer';
 import { initializeAPP } from './redux/appReducer';
 import store from './redux/reduxStore';
-
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
 
@@ -27,21 +26,23 @@ class App extends React.Component {
       return <Preloader />
     }
     return (
-      <div className="app-wrapper">
-        <HeaderContainer />
-        <Sidebar />     
-        <div className="app-wrapper-content">
-          <Suspense fallback={<Preloader />}>
-            <Route path='/dialogs' render={ () => <DialogsContainer />} />
-            <Route path='/profile/:userId?' render={ () => <ProfileContainer />} />
-          </Suspense>         
-          <Route path='/users' render={ () => <UsersContainer />} />
-          <Route path='/news' render={ () => <News />} />
-          <Route path='/music' render={ () => <Music />} />
-          <Route path='/settings' render={ () => <Settings />} />
-          <Route path='/login' render={ () => <Login />} />
-        </div>     
-      </div>
+      <div className='background'>
+        <div className="app-wrapper">
+          <HeaderContainer />
+          <Sidebar />     
+          <div className="app-wrapper-content">
+            <Suspense fallback={<Preloader />}>
+              <Route path='/dialogs' render={ () => <DialogsContainer />} />
+              <Route path='/profile/:userId?' render={ () => <ProfileContainer />} />
+            </Suspense>         
+            <Route path='/users' render={ () => <UsersContainer />} />
+            <Route path='/news' render={ () => <News />} />
+            <Route path='/music' render={ () => <Music />} />
+            <Route path='/settings' render={ () => <Settings />} />
+            <Route path='/login' render={ () => <Login />} />
+          </div>     
+        </div>
+      </div>     
     );
   }
 };

@@ -1,9 +1,12 @@
 import React from 'react';
-import s from './Settings.module.css';
+import styles from './Settings.module.css';
 
 const Settings = () => {
     return (
-        <div>Settings</div>
+        <div className={styles.settings}>
+            <h1 className={styles.h1}>Settings</h1>
+            <div className={styles.mockText}>This page will be added soon</div>
+        </div>
     );
 };
 

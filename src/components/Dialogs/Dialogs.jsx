@@ -27,13 +27,13 @@ const DialogsForm = (props) => {
             <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
                 <Form>
                     <div className={form.formControl}>
-                        <Field type='text' id='message' name='message' as='textarea' placeholder='New message' />
+                        <Field type='text' id='message' name='message' as='textarea' placeholder='New message' className={d.textarea} />
                         <ErrorMessage name='message'>
                             {errorMsg => <div className={form.error}>{errorMsg}</div>}
                         </ErrorMessage>
                     </div>
                     <div>
-                        <button type='submit'>Send message</button>
+                        <button type='submit' className={d.sendMessage}>Send message</button>
                     </div>
                 </Form>
             </Formik>

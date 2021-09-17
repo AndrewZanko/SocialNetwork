@@ -1,22 +1,112 @@
 .userPhoto {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+    height: 120px;
+}
+
+.userPhoto:hover {
+    box-shadow: 0 0 2px 1px rgba(3, 60, 78, 0.5);
 }
 
 .userInfo {
-    margin-bottom: 15px;
+    margin-bottom: 8px;
 }
 
 .wrapper {
     display: grid;
-    grid-template-columns:  1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-column-gap: 3px;
     background-color: white;
 }
 
 .left,
 .right {
-    padding-left: 200px;
+    padding-left: 180px;
     background-color: rgb(38, 163, 194);
+}
+
+.userName {
+    color:cornsilk;
+    font-size: larger;
+}
+
+.userStatus {
+    color:cornsilk;
+    margin-bottom: 35px;
+}
+
+.buttonUnfollow {
+    background: #FF4742;
+    border: 1px solid #FF4742;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    margin-top: 10px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+}
+
+.buttonUnfollow:hover,
+.buttonUnfollow:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #FF4742;
+}
+
+.buttonUnfollow:active {
+    opacity: .5;
+}
+
+.buttonFollow {
+    background: #39f151;
+    border: 1px solid #39f151;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    margin-top: 10px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+}
+
+.buttonFollow:hover,
+.buttonFollow:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #39f151;
+}
+
+.buttonFollow:active {
+    opacity: .5;
 }
